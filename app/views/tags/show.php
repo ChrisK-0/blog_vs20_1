@@ -7,7 +7,7 @@
     <a href="<?php echo URLROOT ?>/posts" class="btn btn-info">Back</a>
 
 
-<?php foreach ($data(['tags'] as $tag); ?>
+<?php foreach ($data['tags'] as $tag) ?>
 
 
 <?php if ($data['post']->user_id == $_SESSION['user_id']): ?>
