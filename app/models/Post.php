@@ -22,7 +22,7 @@ class Post
             posts.created_at as postCreated
             FROM posts
             INNER JOIN users
-            ON posts.user_id = users.id
+            ON posts.user_id=users.id
             ORDER BY posts.created_at DESC
         ');
         $result = $this->db->getAll();

@@ -1,0 +1,12 @@
+.tag_Table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+
+}
+
+.tag_Table > p, th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: yellow;
+}

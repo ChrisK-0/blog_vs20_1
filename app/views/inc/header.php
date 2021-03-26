@@ -9,6 +9,25 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/public/css/style.css">
     <title><?php echo PROJECT_NAME; ?></title>
+    <style>
+        .tag_Table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            background-color: #444;
+
+        }
+
+        .tag_Table > p, th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .post_tag_anchor {
+            color: yellow;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <?php require_once APPROOT . '/views/inc/navbar.php'; ?>

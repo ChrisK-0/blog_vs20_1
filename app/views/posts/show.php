@@ -1,13 +1,22 @@
 <?php require_once APPROOT . '/views/inc/header.php'; ?>
+
+
+<?php
+/*
+echo '<pre>';
+print_r($data);
+echo '</pre>';
+*/
+?>
     <h1><?php echo $data['post']->title ?></h1>
     <div class="bg-secondary text-white p-2 mb-3">
         Created by <?php echo $data['post']->user_id; ?> at <?php echo $data['post']->created_at; ?>
     </div>
     <div class="bg-secondary text-white p-2 mb-3">
-        <?php foreach ($data['tags'] as $tag) ?>
-        <a href="<?php echo URLROOT; ?>/posts/edit/<?php echo $tag->id; ?>"
-           class=""><?php echo $tag->name; ?></a>
-        <?php  endforeach; //removed endforeach and replaced with } ?>
+        <?php foreach ($data['tags'] as $tag): ?>
+            <a href="<?php echo URLROOT; ?>/tags/show/<?php echo $tag->id; ?>"
+               class="post_tag_anchor"><?php echo $tag->name; ?></a>
+        <?php endforeach; //removed endforeach and replaced with } ?>
     </div>
     <p><?php echo $data['post']->content; ?></p>
     <a href="<?php echo URLROOT; ?>/posts" class="btn btn-info">Back</a>

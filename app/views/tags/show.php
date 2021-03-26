@@ -1,27 +1,37 @@
 <?php require_once APPROOT . '/views/inc/header.php'; ?>
-    <h1><?php echo $data['post']->title ?></h1>
+
+<?php
+/*
+echo '<pre>';
+print_r($data);
+echo '</pre>';
+*/
+?>
+    <!-- <h1>Tag nimi > <?php echo $data['tags']->name ?> </h1> -->
+
+<?php foreach ($data['tags'] as $tag): ?>
     <div class="bg-secondary text-white p-2 mb-3">
-        Created by <?php echo $data['post']->user_id ?>at <?php echo $data['post']->created_at; ?>
+        <h3>Postituse andmed:</h3>
+        <table class="tag_Table">
+            <tr>
+                <th>Pealkiri</th>
+                <td><?php echo $tag->title; ?></td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td><?php echo $tag->post_id; ?></td>
+            </tr>
+            <tr>
+                <th>Tagi nimi</th>
+                <td><?php echo $tag->name; ?></td>
+            </tr>
+        </table>
     </div>
-    <p> <?php echo $data['post']->content; ?> </p>
-    <a href="<?php echo URLROOT ?>/posts" class="btn btn-info">Back</a>
+<?php endforeach; ?>
 
 
-<?php foreach ($data['tags'] as $tag) ?>
-
-
-<?php if ($data['post']->user_id == $_SESSION['user_id']): ?>
-    <div class="row justify-content-around">
-        <div class="col-8">
-            <a href="<?php echo URLROOT ?>/posts/edit/<?php echo $data['post']->id; ?>" class="btn btn-success">Edit</a>
-        </div>
-        <div class="col-4">
-            <form action="<?php echo URLROOT ?>/posts/delete/<?php echo $data['post']->id; ?>" method="post">
-                <input type="submit" value="Delete" class="btn btn-danger">
-            </form>
-        </div>
-    </div>
-<?php endif; ?>
+    <a href="<?php echo URLROOT; ?>/tags" class="btn btn-info">Back</a>
+    <!-- <hr> ma ei tea mis see on ega miks see on -->
 
 
 <?php require_once APPROOT . '/views/inc/footer.php'; ?>
